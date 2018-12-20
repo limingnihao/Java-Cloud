@@ -1,0 +1,34 @@
+server:
+  port: ${config.port:10000}
+
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    org.springframework.cloud.bus: INFO
+    org.limingnihao: INFO
+
+spring:
+  application:
+    name: org-limingnihao-server-config
+  profiles:
+    active: subversion
+  cloud:
+    config:
+      enabled: true
+      server:
+        default-label: Trunk
+        svn:
+          uri: https://123.57.191.80:18080/svn/Platform/80_Config
+          username: dhcc_config_server
+          password: config_server_2016
+  rabbitmq:
+    host: 123.57.172.195
+    port: 5672
+    username: dhcc
+    password: dhcc
+
+management:
+  security:
+    enabled: false
+

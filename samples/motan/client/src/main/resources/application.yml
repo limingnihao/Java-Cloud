@@ -1,0 +1,11 @@
+server:
+  port: ${config.port:21100}
+
+spring:
+  application:
+    name: org-limingnihao-samples-dubbo-client
+
+rpc:
+  requestTimeout: 10000
+  maxContentLength: 10485760
+  zookeeper: 127.0.0.1:2181

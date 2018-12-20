@@ -1,0 +1,18 @@
+server:
+  port: ${config.port:21100}
+
+spring:
+  application:
+    name: org-limingnihao-samples-dubbo-client
+
+#dubbo:
+#  scan: org.limingnihao
+#  registry:
+#    address: zookeeper://127.0.0.1:2181
+#  application:
+#    id:  client
+#    name: client
+#  protocol:
+#    id: protocol-id-dubbo
+#    name: protocol-name-dubbo
+#    port: 21101

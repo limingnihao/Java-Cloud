@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.limingnihao.parent</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <!-- 全局属性配置 -->
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+
+        <spring.version>4.3.10.RELEASE</spring.version>
+        <spring.boot.version>1.5.10.RELEASE</spring.boot.version>
+        <spring.cloud.version>1.3.2.RELEASE</spring.cloud.version>
+        <spring.cloud.config.version>1.4.2.RELEASE</spring.cloud.config.version>
+        <!--<spring.cloud.eureka.version>1.3.6.RELEASE</spring.cloud.eureka.version>-->
+
+        <spring.cloud.eureka.version>1.4.5.RELEASE</spring.cloud.eureka.version>
+
+        <spring.cloud.consul.version>1.3.2.RELEASE</spring.cloud.consul.version>
+        <spring.cloud.feign.version>1.3.2.RELEASE</spring.cloud.feign.version>
+        <spring.cloud.hystrix.version>1.3.2.RELEASE</spring.cloud.hystrix.version>
+
+        <spring.session.version>1.3.1.RELEASE</spring.session.version>
+        <spring.redis.version>1.8.0.RELEASE</spring.redis.version>
+        <spring.mongodb.version>1.10.10.RELEASE</spring.mongodb.version>
+
+        <!-- 数据库 orm 连接池 -->
+        <dbcp2.version>2.1.1</dbcp2.version>
+        <alibaba.druid>1.1.6</alibaba.druid>
+
+        <!--<mysql.version>6.0.4</mysql.version>-->
+        <mysql.version>5.1.40</mysql.version>
+        <mybatis.version>3.4.2</mybatis.version>
+        <mybatis-spring.version>1.3.1</mybatis-spring.version>
+        <hibernate.version>5.2.3.Final</hibernate.version>
+        <redis.versoin>2.9.0</redis.versoin>
+        <mongodb.version>3.6.3</mongodb.version>
+
+        <dubbo.spring-boot.version>2.0.0</dubbo.spring-boot.version>
+        <zkclient.version>0.2</zkclient.version>
+        <curator-framework.version>2.12.0</curator-framework.version>
+
+        <zookeeper.version>3.4.8</zookeeper.version>
+        <springfox.version>2.7.0</springfox.version>
+        <aspectj.version>1.8.9</aspectj.version>
+        <junit.version>4.12</junit.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <jackson.version>2.8.10</jackson.version>
+        <http-core.version>4.4.3</http-core.version>
+        <http-client.version>4.5.1</http-client.version>
+        <motan.version>1.1.0</motan.version>
+        <smart-validate.version>1.0.1</smart-validate.version>
+        <limingnihao.util.version>2.3.0</limingnihao.util.version>
+    </properties>
+    <build>
+        <plugins>
+            <!-- 编译插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.20.1</version>
+                <configuration>
+                    <includes>
+                        <include>**/testcase/**/*.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <skip>false</skip>
+                    <show>public</show>
+                    <charset>UTF-8</charset>
+                    <encoding>UTF-8</encoding>
+                    <docencoding>UTF-8</docencoding>
+                    <links>
+                        <link>http://docs.oracle.com/javase/6/docs/api</link>
+                    </links>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus-central-plugin</id>
+            <name>nexus-central-plugin</name>
+            <url>http://123.57.172.195:8081/nexus/content/repositories/central/</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>central</id>
+            <name>Maven Central</name>
+            <url>http://repo1.maven.org/maven2/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <repositories>
+        <repository>
+            <id>zp-nexus</id>
+            <name>zp-nexus</name>
+            <url>http://172.17.0.59:8081/nexus/content/groups/public</url>
+        </repository>
+        <!--<repository>-->
+            <!--<id>central</id>-->
+            <!--<name>Maven Central</name>-->
+            <!--<url>http://repo1.maven.org/maven2/</url>-->
+        <!--</repository>-->
+        <!--<repository>-->
+            <!--<id>sonatype-nexus-snapshots</id>-->
+            <!--<url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+            <!--<releases>-->
+                <!--<enabled>false</enabled>-->
+            <!--</releases>-->
+            <!--<snapshots>-->
+                <!--<enabled>true</enabled>-->
+            <!--</snapshots>-->
+        <!--</repository>-->
+        <!--<repository>-->
+            <!--<id>spring-milestones</id>-->
+            <!--<name>Spring Milestones</name>-->
+            <!--<url>https://repo.spring.io/libs-milestone</url>-->
+            <!--<snapshots>-->
+                <!--<enabled>false</enabled>-->
+            <!--</snapshots>-->
+        <!--</repository>-->
+        <!--<repository>-->
+            <!--<id>springsource-milestone</id>-->
+            <!--<name>SpringMilestones</name>-->
+            <!--<url>http://repo.spring.io/milestone/</url>-->
+        <!--</repository>-->
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>Releases</id>
+            <name>Nexus Release Repository</name>
+            <url>http://123.57.172.195:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>Snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://123.57.172.195:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.limingnihao.java</groupId>
+            <artifactId>org.limingnihao.java.util</artifactId>
+            <version>2.2.0</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-log4j12</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>log4j</artifactId>
+                    <groupId>log4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>commons-codec</artifactId>
+                    <groupId>commons-codec</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>commons-lang3</artifactId>
+                    <groupId>org.apache.commons</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-data-elasticsearch</artifactId>
+                    <groupId>org.springframework.data</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+    <modules>
+        <!--<module>provider.motan</module>-->
+        <!--<module>client.motan</module>-->
+        <module>dubbo.client</module>
+        <module>dubbo.provider</module>
+
+        <module>orm.mybatis</module>
+    </modules>
+
+</project>

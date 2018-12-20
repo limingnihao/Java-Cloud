@@ -1,0 +1,7 @@
+server:
+  port: ${config.port:13000}
+
+spring:
+  application:
+    name: org-limingnihao-server-config
+

@@ -1,0 +1,5 @@
+org/limingnihao/config/client/MyEncryptAesFilter.class
+org/limingnihao/config/client/MyHttpServletRequestWrapper.class
+org/limingnihao/config/client/MyResponseBodyAdvice.class
+org/limingnihao/config/client/MyWebMvcConfigurerAdapter.class
+org/limingnihao/config/client/MyClientConfiguration.class

@@ -1,0 +1,49 @@
+server:
+  port: ${config.port:21000}
+
+spring:
+  application:
+    name: org-limingnihao-samples-dubbo-provider
+management:
+  security:
+    enabled: false
+  port: 21001
+  health:
+    dubbo:
+      status:
+        extras: load,threadpool
+        defaults: memory
+
+jdbc:
+  driver: com.mysql.jdbc.Driver
+  url: jdbc:mysql://127.0.0.1:3306/dhcc_application?useUnicode=true&characterEncoding=utf-8&characterSetResults=UTF-8&serverTimezone=GMT%2b8
+  username: admin
+  password: admin
+# MyBatis
+mybatis:
+    typeAliasesPackage:
+    mapperLocations: classpath:/mybatis/mapper/*.xml
+    configLocation: classpath:/mybatis-config.xml
+
+#dubbo:
+#  application:
+#    id: dubbo-provider-demo
+#    name: dubbo-provider-demo
+#    version: 1.0.0
+#    qos:
+#      port: 21001
+#      enable: true
+#  protocol:
+#    id: dubbo
+#    name: dubbo
+#    port: 21002
+#    status: server
+#  registry:
+#    id: my-registry
+#    name: my-registry
+#    address: zookeeper://127.0.0.1:2181
+#  scan:
+#    base-packages: org.limingnihao.samples.dubbo.provider.service.impl
+#endpoints:
+#  dubbo:
+#    enabled: true
