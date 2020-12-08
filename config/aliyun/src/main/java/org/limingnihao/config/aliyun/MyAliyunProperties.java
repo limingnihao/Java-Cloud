@@ -8,12 +8,12 @@ package org.limingnihao.config.aliyun;
 //@Resource
 public class MyAliyunProperties {
 
-    private String accessKeyId = "LTAIG4wisZ2KHjIv";
-    private String accessKeySecret = "3xz3GupWS9nAFKzyLMCa6BtBy9KrIH";
+    private String accessKeyId = "demo";
+    private String accessKeySecret = "demo";
     // 短信使用
-    private String signName = "昆嵛山下";
-    private String product = "Dysmsapi";
-    private String domain = "dysmsapi.aliyuncs.com";
+    private String signName = "demo";
+    private String product = "demo";
+    private String domain = "demo.aliyuncs.com";
 
     //oss使用
     private String endpoint = "oss-cn-beijing.aliyuncs.com";
